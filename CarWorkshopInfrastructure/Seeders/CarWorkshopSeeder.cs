@@ -34,8 +34,8 @@ namespace CarWorkshopInfrastructure.Seeders
                             PhoneNumber = "+48666111222"
                         }
                     };
-                    mazdaAso.EncodeName();
 
+                    mazdaAso.EncodeName();
                     _dbContext.CarWorkshops.Add(mazdaAso);
                     await _dbContext.SaveChangesAsync();
                 }

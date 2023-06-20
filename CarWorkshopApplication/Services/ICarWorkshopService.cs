@@ -1,9 +1,9 @@
-﻿using CarWorkshopDomain.Entities;
+﻿using CarWorkshopApplication.CarWorkshop;
 
 namespace CarWorkshopApplication.Services
 {
     public interface ICarWorkshopService
     {
-        Task Create(CarWorkshop carWorkshop);
+        Task Create(CarWorkshopDto carWorkshop);
     }
 }
