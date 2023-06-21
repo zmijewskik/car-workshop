@@ -1,4 +1,6 @@
-﻿using CarWorkshopDomain.Interfaces;
+﻿// Ignore Spelling: Validator
+
+using CarWorkshopDomain.Interfaces;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -7,11 +9,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace CarWorkshopApplication.CarWorkshop
+namespace CarWorkshopApplication.CarWorkshop.Commands.CreateCarWorkshop
 {
-    public class CarWorkshopDtoValidator : AbstractValidator<CarWorkshopDto>
+    public class CreateCarWorkshopCommandValidator : AbstractValidator<CreateCarWorkshopCommand>
     {
-        public CarWorkshopDtoValidator(ICarWorkshopRepository repository)
+        public CreateCarWorkshopCommandValidator(ICarWorkshopRepository repository)
         {
             RuleFor(c => c.Name)
                 .NotEmpty()
