@@ -13,6 +13,12 @@ namespace CarWorkshopMVC.Controllers
             _carWorkshopService = carWorkshopService;
         }
 
+        public async Task<IActionResult> Index()
+        {
+            var carWorkshops = await _carWorkshopService.GetAll();
+            return View(carWorkshops);
+        }
+
         public IActionResult Create()
         {
             return View();
@@ -21,12 +27,12 @@ namespace CarWorkshopMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CarWorkshopDto carWorkshop)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(carWorkshop);
             }
             await _carWorkshopService.Create(carWorkshop);
-            return RedirectToAction(nameof(Create)); // TODO: refactor
+            return RedirectToAction(nameof(Index));
         }
     }
 }

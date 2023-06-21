@@ -1,5 +1,8 @@
-﻿using CarWorkshopApplication.Mappings;
+﻿using CarWorkshopApplication.CarWorkshop;
+using CarWorkshopApplication.Mappings;
 using CarWorkshopApplication.Services;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -16,6 +19,10 @@ namespace CarWorkshopApplication.Extensions
             services.AddScoped<ICarWorkshopService, CarWorkshopService>();
 
             services.AddAutoMapper(typeof(CarWorkshopMappingProfile));
+
+            services.AddValidatorsFromAssemblyContaining<CarWorkshopDtoValidator>()
+                .AddFluentValidationAutoValidation()
+                .AddFluentValidationClientsideAdapters();
         }
     }
 }
