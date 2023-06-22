@@ -4,6 +4,7 @@ using CarWorkshopApplication.CarWorkshop.Commands.EditCarWorkshop;
 using CarWorkshopApplication.CarWorkshop.Queries.GetAllCarWorkshops;
 using CarWorkshopApplication.CarWorkshop.Queries.GetCarWorkshopByEncodedName;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarWorkshopMVC.Controllers
@@ -23,11 +24,6 @@ namespace CarWorkshopMVC.Controllers
         {
             var carWorkshops = await _mediator.Send(new GetAllCarWorkshopsQuery());
             return View(carWorkshops);
-        }
-
-        public IActionResult Create()
-        {
-            return View();
         }
 
         [Route("CarWorkshop/{encodedName}/Details")]
@@ -59,7 +55,18 @@ namespace CarWorkshopMVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize]
+        public IActionResult Create()
+        {
+            //if (User.Identity == null || !User.Identity.IsAuthenticated)
+            //{
+            //    return RedirectToPage("/Account/Login", new { area = "Identity" });
+            //}
+            return View();
+        }
+
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create(CreateCarWorkshopCommand command)
         {
             if (!ModelState.IsValid)
