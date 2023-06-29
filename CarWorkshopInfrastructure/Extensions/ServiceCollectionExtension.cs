@@ -17,6 +17,7 @@ namespace CarWorkshopInfrastructure.Extensions
                 configuration.GetConnectionString("CarWorkshop")));
 
             services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<CarWorkshopDbContext>();
 
             services.AddScoped<CarWorkshopSeeder>();

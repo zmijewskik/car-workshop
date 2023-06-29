@@ -60,12 +60,17 @@ namespace CarWorkshopMVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [Authorize]
+        [Authorize(Roles = "Owner")]
         public IActionResult Create()
         {
             //if (User.Identity == null || !User.Identity.IsAuthenticated)
             //{
             //    return RedirectToPage("/Account/Login", new { area = "Identity" });
+            //}
+
+            //if (!User.IsInRole("Owner"))
+            //{
+            //    return RedirectToAction("NoAccess", "Home");
             //}
             return View();
         }
