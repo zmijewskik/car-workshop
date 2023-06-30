@@ -11,6 +11,7 @@ namespace CarWorkshopInfrastructure.Persistence
         }
 
         public DbSet<CarWorkshopDomain.Entities.CarWorkshop> CarWorkshops { get; set; }
+        public DbSet<CarWorkshopDomain.Entities.CarWorkshopService> Services { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -18,6 +19,11 @@ namespace CarWorkshopInfrastructure.Persistence
 
             modelBuilder.Entity<CarWorkshopDomain.Entities.CarWorkshop>()
                 .OwnsOne(c => c.ContactDetails);
+
+            modelBuilder.Entity<CarWorkshopDomain.Entities.CarWorkshop>()
+                .HasMany(c => c.Services)
+                .WithOne(s => s.CarWorkshop)
+                .HasForeignKey(s => s.CarWorkshopId);
         }
     }
 }
