@@ -29,7 +29,7 @@ namespace CarWorkshopApplication.Mappings
 
             CreateMap<CarWorkshopDto, EditCarWorkshopCommand>();
 
-            CreateMap<CarWorkshopServiceDto, CarWorkshopDomain.Entities.CarWorkshop>()
+            CreateMap<CarWorkshopServiceDto, CarWorkshopDomain.Entities.CarWorkshopService>()
                 .ReverseMap();
         }
     }
