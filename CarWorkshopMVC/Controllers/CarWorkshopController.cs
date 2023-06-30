@@ -3,6 +3,8 @@ using CarWorkshopApplication.CarWorkshop.Commands.CreateCarWorkshop;
 using CarWorkshopApplication.CarWorkshop.Commands.EditCarWorkshop;
 using CarWorkshopApplication.CarWorkshop.Queries.GetAllCarWorkshops;
 using CarWorkshopApplication.CarWorkshop.Queries.GetCarWorkshopByEncodedName;
+using CarWorkshopApplication.CarWorkshopService.Commands;
+using CarWorkshopApplication.CarWorkshopService.Queries.GetCarWorkshopServices;
 using CarWorkshopMVC.Extensions;
 using CarWorkshopMVC.Models;
 using MediatR;
@@ -63,7 +65,7 @@ namespace CarWorkshopMVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [Authorize(Roles = "Owner")]
+        [Authorize(Roles = "Owner, Moderator")]
         public IActionResult Create()
         {
             //if (User.Identity == null || !User.Identity.IsAuthenticated)
@@ -79,7 +81,7 @@ namespace CarWorkshopMVC.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Owner")]
+        [Authorize(Roles = "Owner, Moderator")]
         public async Task<IActionResult> Create(CreateCarWorkshopCommand command)
         {
             if (!ModelState.IsValid)
@@ -87,11 +89,34 @@ namespace CarWorkshopMVC.Controllers
                 return View(command);
             }
 
-            //await _mediator.Send(command);
+            await _mediator.Send(command);
 
             this.SetNotification("success", $"Created carworkshop: {command.Name}");
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Owner, Moderator")]
+        [Route("CarWorkshop/CarWorkshopService")]
+        public async Task<IActionResult> CreateCarWorkshopService(CreateCarWorkshopServiceCommand command)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await _mediator.Send(command);
+
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("CarWorkshop/{encodedName}/CarWorkshopService")]
+        public async Task<IActionResult> GetCarWorkshopServices(string encodedName)
+        {
+            var data = await _mediator.Send(new GetCarWorkshopServicesQuery() { EncodedName = encodedName });
+            return Ok(data);
         }
     }
 }
