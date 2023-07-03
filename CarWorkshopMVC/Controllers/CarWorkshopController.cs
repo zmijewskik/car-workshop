@@ -6,11 +6,9 @@ using CarWorkshopApplication.CarWorkshop.Queries.GetCarWorkshopByEncodedName;
 using CarWorkshopApplication.CarWorkshopService.Commands;
 using CarWorkshopApplication.CarWorkshopService.Queries.GetCarWorkshopServices;
 using CarWorkshopMVC.Extensions;
-using CarWorkshopMVC.Models;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 
 namespace CarWorkshopMVC.Controllers
 {
