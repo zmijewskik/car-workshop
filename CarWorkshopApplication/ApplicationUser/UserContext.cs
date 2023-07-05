@@ -35,6 +35,7 @@ namespace CarWorkshopApplication.ApplicationUser
                 return null;
             }
 
+            // get data about current user from Claims
             var id = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)!.Value;
             var email = user.FindFirst(c => c.Type == ClaimTypes.Email)!.Value;
             var roles = user.Claims.Where(c => c.Type == ClaimTypes.Role).Select(c => c.Value);
