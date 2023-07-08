@@ -1,12 +1,4 @@
-﻿using CarWorkshopDomain.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarWorkshopApplication.CarWorkshop
+﻿namespace CarWorkshopApplication.CarWorkshop
 {
     public class CarWorkshopDto
     {

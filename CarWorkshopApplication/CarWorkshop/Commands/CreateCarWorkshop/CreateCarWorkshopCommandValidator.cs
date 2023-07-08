@@ -1,13 +1,5 @@
-﻿// Ignore Spelling: Validator
-
-using CarWorkshopDomain.Interfaces;
+﻿using CarWorkshopDomain.Interfaces;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace CarWorkshopApplication.CarWorkshop.Commands.CreateCarWorkshop
 {
