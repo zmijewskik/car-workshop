@@ -14,11 +14,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshopApplication", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshopInfrastructure", "CarWorkshopInfrastructure\CarWorkshopInfrastructure.csproj", "{6D3C8E12-44D2-455E-A72A-D409BB7135A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshopDomain.Tests", "CarWorkshopDomain.Tests\CarWorkshopDomain.Tests.csproj", "{00835DFE-B8F8-4861-BB9E-6B38918B720C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshopDomain.Tests", "CarWorkshopDomain.Tests\CarWorkshopDomain.Tests.csproj", "{00835DFE-B8F8-4861-BB9E-6B38918B720C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshopApplication.Tests", "CarWorkshopApplication.Tests\CarWorkshopApplication.Tests.csproj", "{B7D45A20-4EF7-4696-AB14-5892247FC364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarWorkshopApplication.Tests", "CarWorkshopApplication.Tests\CarWorkshopApplication.Tests.csproj", "{B7D45A20-4EF7-4696-AB14-5892247FC364}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3F85ED65-AA91-49EF-9302-15F9CBCE0926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarWorkshopMVC.Tests", "CarWorkshopMVC.Tests\CarWorkshopMVC.Tests.csproj", "{46468CCF-071A-4D1C-B58E-AA1EA90AD5D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{B7D45A20-4EF7-4696-AB14-5892247FC364}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7D45A20-4EF7-4696-AB14-5892247FC364}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7D45A20-4EF7-4696-AB14-5892247FC364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46468CCF-071A-4D1C-B58E-AA1EA90AD5D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46468CCF-071A-4D1C-B58E-AA1EA90AD5D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46468CCF-071A-4D1C-B58E-AA1EA90AD5D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46468CCF-071A-4D1C-B58E-AA1EA90AD5D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{00835DFE-B8F8-4861-BB9E-6B38918B720C} = {3F85ED65-AA91-49EF-9302-15F9CBCE0926}
 		{B7D45A20-4EF7-4696-AB14-5892247FC364} = {3F85ED65-AA91-49EF-9302-15F9CBCE0926}
+		{46468CCF-071A-4D1C-B58E-AA1EA90AD5D9} = {3F85ED65-AA91-49EF-9302-15F9CBCE0926}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {06DDB3B7-BFD1-464C-A1E7-97571814446B}
