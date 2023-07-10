@@ -26,7 +26,9 @@ namespace CarWorkshopMVC.Controllers.Tests
             // assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
 
+            // content will be full HTML from /Home/About
             var content = await response.Content.ReadAsStringAsync();
+
             content.Should().Contain("<h1>CarWorkshop app</h1>")
                 .And.Contain("<div class=\"alert alert-primary\">Website based on a car workshops.</div>")
                 .And.Contain("<li>car</li>")

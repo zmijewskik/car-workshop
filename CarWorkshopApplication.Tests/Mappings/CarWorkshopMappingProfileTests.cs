@@ -4,7 +4,6 @@ using CarWorkshopApplication.CarWorkshop;
 using CarWorkshopDomain.Entities;
 using FluentAssertions;
 using Moq;
-using System.IO;
 using Xunit;
 
 namespace CarWorkshopApplication.Mappings.Tests
